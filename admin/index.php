@@ -11,7 +11,7 @@
     <?php require_once 'views/blocks/header.php' ?>    
 
     <div class='block-list'>
-            <p><a href="/admin/views/list.php">Пользователи</a></p>
+            <p><a href="/admin/views/user_list.php">Пользователи</a></p>
             <p><a href="">Статьи</a></p>
             <p><a href="/">Обратно на сайт</a></p>
     </div>

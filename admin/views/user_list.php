@@ -81,7 +81,7 @@
         </form>
     </div>
 
-    <script src='/admin/views/js/list.js'></script>
+    <script src='/admin/views/js/user_list.js'></script>
 
 </body>
 
