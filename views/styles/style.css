@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgba(155, 155, 147, 0.103);
+}
+
+header {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #578ff8;
+    /* Красный цвет фона */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Тень для эффекта поднятия header */
+    z-index: 1000;
+    /* Для правильного отображения над остальным содержимым */
+}
+
+header h1 {
+    color: #fff;
+    /* Белый цвет текста */
+    margin: 0;
+}
+
+.buttons {
+    display: flex;
+}
+
+.button {
+    margin-left: 10px;
+    padding: 8px 16px;
+    background-color: #fff;
+    /* Белый цвет фона кнопок */
+    color: #000000;
+    /* Красный цвет текста кнопок */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button-type-exit{
+    background-color: rgb(247, 62, 62);
+}
+.button-type-admin{
+    background-color: rgb(112, 255, 112);
+}
+
+.button:hover {
+    background-color: #578ff8;
+    /* Цвет фона при наведении */
+    color: #fff;
+    /* Цвет текста при наведении */
+}
+
+a{
+    text-decoration: none;
+}
+
+.auth-form{
+    background-color: rgba(128, 128, 128, 0.363);
+    width: 30%;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+.auth-form label {
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 20px;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+
+    font-size: 18px;
+}
+.auth-form button {
+    font-size: 20px;
+}
