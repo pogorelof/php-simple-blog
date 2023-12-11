@@ -1,20 +1,9 @@
 <?php
-require_once 'Database.php';
+require_once 'TSingleton.php';
 
 class UserModel
 {
-    private static $db = null;
-    private function __construct()
-    {
-    }
-
-    private static function connect()
-    {
-        if (self::$db === null) {
-            self::$db = Database::getInstance();
-        }
-        return self::$db;
-    }
+    use TSingleton;
 
     public static function addUser($login, $password, $role = 'CLIENT')
     {
@@ -32,6 +21,18 @@ class UserModel
         foreach ($result as $row) {
             $users[] = $row;
         }
+        return $users;
+    }
+    public static function showAllUsersIdKey(){
+        $stmt = self::connect()->prepare("SELECT * FROM user");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $users = [];
+        foreach ($result as $row) {
+            $users[] = $row;
+        }
+        $ids = array_column($users, 'id');
+        $users = array_combine($ids, $users);
         return $users;
     }
 
