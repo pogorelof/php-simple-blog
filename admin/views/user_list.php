@@ -16,7 +16,7 @@
         <form action="" class='search' method="GET">
             <input type="text" name="search">
             <button type='submit'>Найти</button>
-            <button type='submit'><a href="/admin/views/list.php">Все</a></button>
+            <button type='submit'><a href="/admin/views/user_list.php">Все</a></button>
         </form>
         <hr>
 

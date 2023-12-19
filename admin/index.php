@@ -12,7 +12,7 @@
 
     <div class='block-list'>
             <p><a href="/admin/views/user_list.php">Пользователи</a></p>
-            <p><a href="">Статьи</a></p>
+            <p><a href="/admin/views/article_list.php">Статьи</a></p>
             <p><a href="/">Обратно на сайт</a></p>
     </div>
 

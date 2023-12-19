@@ -59,7 +59,9 @@ class UserModel
     {
         $stmt = self::connect()->prepare('DELETE FROM user WHERE id = ?');
         $stmt->bind_param('i', $id);
-        $stmt->execute();
+        if(!$stmt->execute()){
+            die("Ошибка выполнения запроса {$stmt->error}");
+        }
     }
     
     public static function editPassword($id, $new_password){

@@ -11,16 +11,14 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgb(161, 162, 236);
-    /* Красный цвет фона */
+    /* background-color: rgb(161, 162, 236); */
+    background-color: rgb(62, 91, 233);
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* Тень для эффекта поднятия header */
     z-index: 1000;
-    /* Для правильного отображения над остальным содержимым */
 }
 
 header h1 {
@@ -98,7 +96,9 @@ a{
     width: 90%;
 }
 .card{
-    background-color: rgba(161, 162, 236, 0.616);
+    /* background-color: rgba(161, 162, 236, 0.616); */
+    background-color: rgba(57, 9, 249, 0.048);
+
     text-align: center;
     margin-bottom: 10px;
     border-radius: 15px;
