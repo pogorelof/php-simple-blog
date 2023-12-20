@@ -1,5 +1,6 @@
 <?php
 require_once '../database/ArticleModel.php';
+session_start();
 
 class ArticleController
 {
@@ -21,6 +22,14 @@ class ArticleController
 
     public static function editTitle($id, $title){
         ArticleModel::editTitle($id, $title);
+    }
+
+    public static function addArticle($title, $text){
+        ArticleModel::addArticle($title, $text, $_SESSION['user']['id']);
+    }
+
+    public static function editAll($id, $title, $text){
+        ArticleModel::editAll($id, $title, $text);
     }
 }
 
@@ -47,5 +56,18 @@ switch ($action) {
         $text = $_POST['title'];
         ArticleController::editTitle($id, $text);
         header("Location:{$_SERVER['HTTP_REFERER']}");
+        break;
+    case 'publish':
+        $title = $_POST['title'];
+        $text = $_POST['text'];
+        ArticleController::addArticle($title, $text);
+        header("Location: {$_SERVER['HTTP_REFERER']}");
+        break;
+    case 'edit':
+        $id = $_POST['id'];
+        $title = $_POST['title'];
+        $text = $_POST['text'];
+        ArticleController::editAll($id, $title, $text);
+        header("Location: {$_SERVER['HTTP_REFERER']}");
         break;
 }

@@ -4,7 +4,7 @@
 <head>
     <?php require_once 'blocks/head.php' ?>
 
-    <title>Регистрация</title>
+    <title>Логин</title>
 </head>
 
 <body>

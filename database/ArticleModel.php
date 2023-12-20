@@ -10,7 +10,7 @@ class ArticleModel{
     }
 
     public static function showAllArticles(){
-        $stmt = self::connect()->prepare("SELECT * FROM article ORDER BY date");
+        $stmt = self::connect()->prepare("SELECT * FROM article ORDER BY date DESC");
         $stmt->execute();
         $result = $stmt->get_result();
         $articles = [];
@@ -30,17 +30,30 @@ class ArticleModel{
         return $result->fetch_assoc();
     }
 
-    public static function findArticleByAuthorId($author_id){
-        $stmt = self::connect()->prepare("SELECT * FROM article WHERE author_id=?");
+    public static function findArticlesByAuthorId($author_id){
+        $stmt = self::connect()->prepare("SELECT * FROM article WHERE author_id=? ORDER BY date DESC");
         $stmt->bind_param('i', $author_id);
         $stmt->execute();
         $result = $stmt->get_result();
-        return $result->fetch_assoc();
+
+        $articles = [];
+
+        foreach($result as $row){
+            $articles[] = $row;
+        }
+
+        return $articles;
     }
 
     public static function deleteArticle($id){
         $stmt = self::connect()->prepare("DELETE FROM article WHERE id=?");
         $stmt->bind_param('i', $id);
+        $stmt->execute();
+    }
+
+    public static function editAll($id, $title, $text){
+        $stmt = self::connect()->prepare("UPDATE article SET title = ?, text = ? WHERE id=?");
+        $stmt->bind_param('ssi', $title, $text, $id);
         $stmt->execute();
     }
 
